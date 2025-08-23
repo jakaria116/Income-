@@ -1,102 +1,75 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easy Earn - আয়ের সেরা প্ল্যাটফর্ম</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #ffecd2, #fcb69f);
-            color: #333;
-            text-align: center;
-        }
-        header {
-            background: #ff6600;
-            padding: 20px;
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-        }
-        .banner {
-            margin: 20px;
-            padding: 20px;
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .banner h1 {
-            color: #ff6600;
-        }
-        .btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 25px;
-            background: #ff6600;
-            color: white;
-            border-radius: 25px;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background: #e65500;
-        }
-        .trust {
-            margin: 30px auto;
-            padding: 20px;
-            width: 80%;
-            background: #fffbe6;
-            border: 2px solid #ff6600;
-            border-radius: 10px;
-        }
-        footer {
-            background: #333;
-            color: white;
-            padding: 10px;
-            font-size: 14px;
-            margin-top: 30px;
-        }
-        <script src="assets/script.js"></script>
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Easy Earn</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background: #4CAF50;
+      color: white;
+      padding: 15px 0;
+      font-size: 22px;
+    }
+    .container {
+      padding: 20px;
+    }
+    .popup {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      display: none;
+      font-size: 18px;
+    }
+  </style>
 </head>
 <body>
-    <header>💰 Easy Earn - এখনই আয় শুরু করুন!</header>
-    <div class="banner">
-        <h1>🎉 প্রতিদিন ৫০০+ টাকা আয়ের সুযোগ!</h1>
-        <p>✅ আজই ফ্রি রেজিস্ট্রেশন করুন এবং প্রথম লগিনে পান ৫০ টাকা বোনাস!</p>
-        <p>🔥 প্রতিদিন হাজারো মানুষ এখান থেকে আয় করছে, আপনি কেন বাদ যাবেন?</p>
-        <a href="https://otieu.com/4/9349412" class="btn">এখনই রেজিস্ট্রেশন করুন</a>
-    </div>
 
-    <div class="trust">
-        <h2>✅ 100% ট্রাস্টেড প্ল্যাটফর্ম</h2>
-        <p>💳 বিকাশ, নগদ, রকেট - সাথে সাথে পেমেন্ট!</p>
-        <p>🌟 এখনই কাজ শুরু করুন, প্রতিদিন রেফার করে আয় করুন!</p>
-        <p>📢 সবাই বলছে এই সাইট থেকে তারা আয় করছে, এবার আপনার সুযোগ!</p>
-    </div>
+<header>
+  Easy Earn - ইনকাম শুরু করুন
+</header>
 
-    <footer>
-        © 2025 Easy Earn | All Rights Reserved
-    </footer>
+<div class="container">
+  <h2>স্বাগতম! এখানে কুইজ খেলে টাকা জিতুন 💰</h2>
+  <p>প্রতিদিন নতুন অফার ও বোনাস পাবেন।</p>
+</div>
 
-  <script>
-    const messages = [
-      "নতুন: মাহিন ২০০ টাকা তুলেছেন ✅",
-      "নতুন: রিমা ৫০ টাকা বোনাস পেয়েছেন 🎁",
-      "নতুন: হাসান ৩০ টাকা কুইজ জিতেছেন 🎯"
-    ];
+<div id="popup" class="popup"></div>
 
-    function showMessage() {
-      const msg = messages[Math.floor(Math.random() * messages.length)];
-      alert(msg);
-    }
+<script>
+  const messages = [
+    "মাহিন ২০০ টাকা জিতেছেন ✅",
+    "রিমা ৫০ টাকা বোনাস পেয়েছেন 🎁",
+    "হাসান ৩০ টাকা কুইজ জিতেছেন 🎯",
+    "আফরিদি ১০০ টাকা রিচার্জ নিয়েছেন 💳",
+    "নতুন ইউজার বোনাস ২০ টাকা পেয়েছেন 🎉"
+  ];
 
-    setInterval(showMessage, 5000);
-  </script>
+  const popup = document.getElementById("popup");
+
+  function showMessage() {
+    const msg = messages[Math.floor(Math.random() * messages.length)];
+    popup.textContent = msg;
+    popup.style.display = "block";
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 3000);
+  }
+
+  setInterval(showMessage, 4000);
+</script>
+
 </body>
 </html>
