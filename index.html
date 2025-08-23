@@ -82,5 +82,20 @@
     <footer>
         © 2025 Easy Earn | All Rights Reserved
     </footer>
+
+  <script>
+    const messages = [
+      "নতুন: মাহিন ২০০ টাকা তুলেছেন ✅",
+      "নতুন: রিমা ৫০ টাকা বোনাস পেয়েছেন 🎁",
+      "নতুন: হাসান ৩০ টাকা কুইজ জিতেছেন 🎯"
+    ];
+
+    function showMessage() {
+      const msg = messages[Math.floor(Math.random() * messages.length)];
+      alert(msg);
+    }
+
+    setInterval(showMessage, 5000);
+  </script>
 </body>
 </html>
